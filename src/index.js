@@ -22,5 +22,6 @@ function add(a, b) {
 // Never use the names with conflicting JavaScript Libraries as it results to Error
 // Treat the user interface as the slave of the state. Once the state changes, the UI will be re-rendered
 // Redux is a state management library, it manages and maintains the state very well
+// React Follows uni-directional flow of communication from compenent to descendants
 ReactDOM.render(<App val={add} />, document.getElementById("root"));
 

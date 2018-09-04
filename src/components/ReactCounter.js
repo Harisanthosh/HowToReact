@@ -1,4 +1,6 @@
 import React from "react";
+import CounterDisplay from './CounterDisplay';
+import Counterform from './Counterform';
 
 class ReactCounter extends React.Component {
 
@@ -27,11 +29,8 @@ class ReactCounter extends React.Component {
     render() {
         return (
             <div style={{ padding: "20", margin: "20" }}>
-                <form>
-                    <input type="button" className="btn btn-success" value="Increment" onClick={this.incrementCount}></input>&nbsp;&nbsp;
-                    <input type="button" className="btn btn-danger" value="Decrement" onClick={this.decrementCount}></input>
-                </form>
-                <h2>{this.state.count}</h2>
+                <Counterform incrementHandler={this.incrementCount} decrementHandler={this.decrementCount} />
+                <CounterDisplay value={this.state.count} />
             </div>
         )
     }
