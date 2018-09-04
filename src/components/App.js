@@ -25,7 +25,12 @@ const styleObj = {
 const i = "Ninjas";
 
 const colorsArr = ["Red", "Green", "Blue"]
-const jsxArray = colorsArr.map((element) => <li>{element}</li>)
+let idx = 0;
+const jsxArray = colorsArr.map((element) => {
+    idx++;
+    return <li key={idx}>{element}</li>
+}
+)
 class App extends React.Component {
 
     render() {
