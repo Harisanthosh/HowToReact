@@ -14,8 +14,9 @@ class ReactCounter extends React.Component {
         this.decrementCount = this.decrementCount.bind(this);
     }
 
-    incrementCount() {
+    incrementCount(val) {
         console.log("Incrementing..", this);
+        console.log("From child", val)
         //For Asynchronously changing the state use callback and update the state with the previous state
         // this.setState({
         //     count: count + 1
