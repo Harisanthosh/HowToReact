@@ -32,7 +32,7 @@ class ReactCounter extends React.Component {
             <div style={{ padding: "20", margin: "20" }}>
                 <Counterform incrementHandler={this.incrementCount} decrementHandler={this.decrementCount} />
                 <CounterDisplay value={this.state.count} />
-                <CounterDisplay />
+                {/* <CounterDisplay />  Commenting out as it displays props from the child*/}
             </div>
         )
     }

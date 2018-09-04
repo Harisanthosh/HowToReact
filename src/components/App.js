@@ -1,6 +1,7 @@
 import React from "react"
 import ReactDate from './Date'
 import ReactCounter from './ReactCounter'
+import ReactForm from './Form'
 //Rules of JS XML
 // Single root tag(element)
 // every start tag must have corresponding end tag<p></p></p>
@@ -50,6 +51,8 @@ class App extends React.Component {
             <button type="button" className="btn btn-success">Bootstrap</button><br />
             <ReactDate /><br />
             <ReactCounter />
+            <br />
+            <ReactForm />
         </div>;
     }
 }
