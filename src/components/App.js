@@ -7,7 +7,19 @@ import React from "react"
 // Attributes should be given in quotes
 // case sensitive
 // using for in JSX is not permitted, use jsxArray
-// 
+
+
+//Rules of CSS
+// External, internal and inline are 
+// we can also import as CSS into a JS file, that is being taken care by WebPack.
+
+const styleObj = {
+    backgroundColor: "brown",
+    fontWeight: "bolder",
+    fontSize: "2rem",
+    padding: "20",
+    height: 50 * 2
+}
 
 const i = 100;
 
@@ -21,9 +33,15 @@ class App extends React.Component {
             <h1>Hello {i}!!</h1>
             <h4>Enjoy {Math.random() * Math.floor(10)}</h4>
             <h4>{console.log(jsxArray)}</h4>
-            <ul>{jsxArray}</ul>
-            <h4>{this.props.val}</h4>
-            <h4>{this.props.val(10, 20)}</h4>
+            <div className="external">
+                <ul>{jsxArray}</ul>
+                <h4>{this.props.val}</h4>
+            </div>
+            <div style={styleObj}>
+                <h4>{this.props.val(10, 20)}</h4>
+            </div>
+            <br />
+            <button type="button" className="btn btn-success">Bootstrap</button>
         </div>;
     }
 }
