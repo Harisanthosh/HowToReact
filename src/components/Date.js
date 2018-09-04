@@ -23,6 +23,7 @@ class ReactDate extends React.Component {
 
 
     render() {
+        console.log("Render method called by changing the state");
         return <h1>{this.state.currentTime}</h1>
     }
 }

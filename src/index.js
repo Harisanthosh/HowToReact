@@ -19,5 +19,7 @@ function add(a, b) {
 //Any dynamic behavoir with time or with user interaction we need stateful components
 //States are internal, so adding and updating and removing should happen only inside the component
 // whenever the state changes, the render method will be reexecuted
+// Never use the names with conflicting JavaScript Libraries as it results to Error
+// Treat the user interface as the slave of the state. Once the state changes, the UI will be re-rendered
 ReactDOM.render(<App val={add} />, document.getElementById("root"));
 
