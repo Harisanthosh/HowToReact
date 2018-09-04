@@ -1,5 +1,6 @@
 import React from "react"
 import ReactDate from './Date'
+import ReactCounter from './ReactCounter'
 //Rules of JS XML
 // Single root tag(element)
 // every start tag must have corresponding end tag<p></p></p>
@@ -21,7 +22,7 @@ const styleObj = {
     height: 50 * 2
 }
 
-const i = 100;
+const i = "Ninjas";
 
 const colorsArr = ["Red", "Green", "Blue"]
 const jsxArray = colorsArr.map((element) => <li>{element}</li>)
@@ -42,7 +43,8 @@ class App extends React.Component {
             </div>
             <br />
             <button type="button" className="btn btn-success">Bootstrap</button><br />
-            <ReactDate />
+            <ReactDate /><br />
+            <ReactCounter />
         </div>;
     }
 }
