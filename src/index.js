@@ -23,5 +23,21 @@ function add(a, b) {
 // Treat the user interface as the slave of the state. Once the state changes, the UI will be re-rendered
 // Redux is a state management library, it manages and maintains the state very well
 // React Follows uni-directional flow of communication from compenent to descendants
+
+
+//Lifecycle methods
+// Mounting phase | Update Phase | Unmounting Phase
+// constructor    |     render     | componentWillUnmount
+// componentWillMount | componentWillUpdate |
+// componentDidMount | componentDidUpdate, componentWillReceiveProps, shouldComponentUpdate
+// componentWillMount and componentWillUpdate will not generally have any logic as render didn't happen
+// so dont do Ajax call in Will method
+// componentDidMount is the place where ajax call or updation of state can be made
+// All cleaning up activities will be performed in componentWillUnmount
+
+// All DOM events are not real, we use Synthetic events
+// Diffing is the algorithm to find where the change / delta is to be made and will update only that portion / cell
+// the process of updating the area or cell from cell is called reconciliation
+// Vdom-2 <- Vdom-1 <- Rdom
 ReactDOM.render(<App val={add} />, document.getElementById("root"));
 

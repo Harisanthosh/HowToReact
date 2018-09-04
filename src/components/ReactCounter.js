@@ -1,6 +1,7 @@
 import React from "react";
 import CounterDisplay from './CounterDisplay';
 import Counterform from './Counterform';
+import PropTypes from "prop-types";
 
 class ReactCounter extends React.Component {
 
@@ -31,9 +32,11 @@ class ReactCounter extends React.Component {
             <div style={{ padding: "20", margin: "20" }}>
                 <Counterform incrementHandler={this.incrementCount} decrementHandler={this.decrementCount} />
                 <CounterDisplay value={this.state.count} />
+                <CounterDisplay />
             </div>
         )
     }
 }
+
 
 export default ReactCounter;
