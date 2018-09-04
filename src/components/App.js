@@ -1,5 +1,5 @@
 import React from "react"
-
+import ReactDate from './Date'
 //Rules of JS XML
 // Single root tag(element)
 // every start tag must have corresponding end tag<p></p></p>
@@ -41,7 +41,8 @@ class App extends React.Component {
                 <h4>{this.props.val(10, 20)}</h4>
             </div>
             <br />
-            <button type="button" className="btn btn-success">Bootstrap</button>
+            <button type="button" className="btn btn-success">Bootstrap</button><br />
+            <ReactDate />
         </div>;
     }
 }
