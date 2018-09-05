@@ -29,6 +29,9 @@
 // Install React redux react-redux use store.connect instead of store.dispatch and store.subscribe
 // don't subscribe presntational components to stor, subscribe only container components to the store
 
+//Middleware:
+// Lies between reducer and store
+
 import React from "react";
 // do in index.js
 import { connect } from "react-redux";

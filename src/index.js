@@ -2,9 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
 import { BrowserRouter as Router } from "react-router-dom";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import counterReducer from "./components/Reducers/counterReducer";
+import { composeWithDevTools } from "redux-devtools-extension";
+import customLogger from "./components/middlewares/customLogger";
+import logger from "redux-logger";
 
 // function Hello() {
 //     return <div>
@@ -43,7 +46,10 @@ function add(a, b) {
 // the process of updating the area or cell from cell is called reconciliation
 // Vdom-2 <- Vdom-1 <- Rdom
 
-const appStore = createStore(counterReducer);
+const appStore = createStore(
+  counterReducer,
+  composeWithDevTools(applyMiddleware(customLogger, logger))
+);
 
 ReactDOM.render(
   <Provider store={appStore}>
