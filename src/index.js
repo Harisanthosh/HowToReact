@@ -10,6 +10,8 @@ import customLogger from "./components/middlewares/customLogger";
 import logger from "redux-logger";
 import axios from "axios";
 
+import userDetailsReducer from "./components/Reducers/userDetailsReducer";
+
 // function Hello() {
 //     return <div>
 //         <h1>Hello World!!</h1>
@@ -52,6 +54,7 @@ const appStore = createStore(
   composeWithDevTools(applyMiddleware(customLogger, logger))
 );
 
+const spaStore = createStore(userDetailsReducer, composeWithDevTools());
 /*axios
   .get("https://api.github.com/users/gaearon")
   .then(response => {
