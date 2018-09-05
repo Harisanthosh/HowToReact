@@ -9,6 +9,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import customLogger from "./components/middlewares/customLogger";
 import logger from "redux-logger";
 import axios from "axios";
+import thunk from "redux-thunk";
 
 import userDetailsReducer from "./components/Reducers/userDetailsReducer";
 
@@ -54,7 +55,10 @@ const appStore = createStore(
   composeWithDevTools(applyMiddleware(customLogger, logger))
 );
 
-const spaStore = createStore(userDetailsReducer, composeWithDevTools());
+const spaStore = createStore(
+  userDetailsReducer,
+  composeWithDevTools(applyMiddleware(thunk))
+);
 /*axios
   .get("https://api.github.com/users/gaearon")
   .then(response => {
@@ -64,8 +68,10 @@ const spaStore = createStore(userDetailsReducer, composeWithDevTools());
     console.log(err);
   });*/
 
+//We can pass and use only one store so change it when needed or use your own MultiProvider as per -gaearon :P
+
 ReactDOM.render(
-  <Provider store={appStore}>
+  <Provider store={spaStore}>
     <Router>
       <App val={add} />
     </Router>
