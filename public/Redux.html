@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Redux demo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.0/redux.js"></script>
+</head>
+
+<body>
+
+    <form action="">
+        <input type="button" value="increment" onclick="increment()" /> &nbsp;&nbsp;
+        <input type="button" value="decrement" onclick="decrement()" /> <br/><br />
+    </form>
+    <h1 id="countNum"> 0 </h1>
+</body>
+<script>
+    //Build the View , then build the dispatcher, update the actions and dispatch them and finally subscribe the store to the view
+    // **** Steps to use Redux
+    // Build the VIEW
+    // Design Store and action
+    // Write Reducer
+    // Create Store
+    // Dispatch Actions
+    // Subscribe Views to the Store
+    function incrementAction() {
+        return { type: "INCREMENT" };
+    }
+    function decrementAction() {
+        return { type: "DECREMENT" };
+    }
+    function increment() {
+        console.log("Incrementing");
+        //appStore.dispatch({ type: "INCREMENT" }); Instead of hardcoding use Actionscall to retrieve the actions
+        appStore.dispatch(incrementAction());
+    }
+    function decrement() {
+        console.log("Decrementing");
+        //appStore.dispatch({ type: "DECREMENT" });
+        appStore.dispatch(decrementAction());
+    }
+    function counterReducer(prevState = { count: 0 }, action) {
+
+        let newState;
+
+        switch (action.type) {
+            case "INCREMENT":
+                newState = { ...prevState, count: prevState.count + 1 }
+                break;
+            case "DECREMENT":
+                newState = { ...prevState, count: prevState.count - 1 }
+                break;
+            default:
+                newState = { ...prevState }
+                break;
+        }
+        console.log("PrevState", prevState);
+        console.log("action", action);
+        console.log("newState", newState);
+        return newState;
+    }
+
+    const appStore = Redux.createStore(counterReducer);
+    appStore.subscribe(() => {
+        console.log(appStore.getState());
+        var element = document.getElementById("countNum");
+        element.innerText = appStore.getState().count;
+
+    })
+    //console.log(appStore.getState());
+</script>
+
+</html>
