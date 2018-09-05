@@ -23,7 +23,11 @@ import DevPrompt from "./DevPrompt";
 
 //React Router
 // Instead of using Link we can also use <NavLink activeClassName="activeMenu" to="/prompt">Prompt </NavLink>
-
+// The props of the router will have history, location and match
+// If we use :id it will be in match params
+// If we add a queryString it will be in location
+// If we change the browser router to hashrouter we will have a *
+// If our content is just a static content we can use a static router, so it wont contact the server. For dynamic site use Dynamic router
 const styleObj = {
   backgroundColor: "brown",
   fontWeight: "bolder",
@@ -64,14 +68,23 @@ class App extends React.Component {
             <Link to="/prompt">Prompt</Link>
           </li>
         </ul>
-        <switch>
+        <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/aboutus" component={Aboutus} />
+          {/* <Route path="/about" render={()=>{
+              <Aboutus val="300"/>
+          }} /> Passing parameters in Route Path*/}
           <Route path="/contactus" component={Contactus} />
           <Route path="/mainpage" component={MainPage} />
           <Route path="/console" component={Console} />
           <Route path="/prompt" component={DevPrompt} />
-        </switch>
+          <Route
+            path="*"
+            render={() => {
+              return <h1>404 - Not Found!</h1>;
+            }}
+          />
+        </Switch>
       </div>
     );
   }
