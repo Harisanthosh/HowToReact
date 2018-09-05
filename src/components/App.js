@@ -10,6 +10,7 @@ import MainPage from "./MainPage";
 import Console from "./Console";
 import DevPrompt from "./DevPrompt";
 import CoreRedux from "./CoreRedux";
+import ReactAjax from "./ReactAjax";
 //Rules of JS XML
 // Single root tag(element)
 // every start tag must have corresponding end tag<p></p></p>
@@ -71,6 +72,9 @@ class App extends React.Component {
           <li>
             <Link to="/redux">Redux</Link>
           </li>
+          <li>
+            <Link to="/ajax">Ajax Example</Link>
+          </li>
         </ul>
         <Switch>
           <Route path="/" exact component={Home} />
@@ -83,6 +87,7 @@ class App extends React.Component {
           <Route path="/console" component={Console} />
           <Route path="/prompt" component={DevPrompt} />
           <Route path="/redux" component={CoreRedux} />
+          <Route path="/ajax" component={ReactAjax} />
           <Route
             path="*"
             render={() => {

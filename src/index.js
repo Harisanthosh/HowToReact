@@ -8,6 +8,7 @@ import counterReducer from "./components/Reducers/counterReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
 import customLogger from "./components/middlewares/customLogger";
 import logger from "redux-logger";
+import axios from "axios";
 
 // function Hello() {
 //     return <div>
@@ -50,6 +51,15 @@ const appStore = createStore(
   counterReducer,
   composeWithDevTools(applyMiddleware(customLogger, logger))
 );
+
+/*axios
+  .get("https://api.github.com/users/gaearon")
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(err => {
+    console.log(err);
+  });*/
 
 ReactDOM.render(
   <Provider store={appStore}>
