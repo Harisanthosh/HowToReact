@@ -1,7 +1,10 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import App from "./components/App"
-import { BrowserRouter as Router } from "react-router-dom"
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+import { BrowserRouter as Router } from "react-router-dom";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import counterReducer from "./components/Reducers/counterReducer";
 
 // function Hello() {
 //     return <div>
@@ -9,7 +12,7 @@ import { BrowserRouter as Router } from "react-router-dom"
 //     </div>;
 // }
 function add(a, b) {
-    return a + b;
+  return a + b;
 }
 //while passing props to the child component except when passing strings use {} to pass array/ function/ or jsx to your code
 //Some examples are listed below passing array
@@ -25,7 +28,6 @@ function add(a, b) {
 // Redux is a state management library, it manages and maintains the state very well
 // React Follows uni-directional flow of communication from compenent to descendants
 
-
 //Lifecycle methods
 // Mounting phase | Update Phase | Unmounting Phase
 // constructor    |     render     | componentWillUnmount
@@ -40,5 +42,14 @@ function add(a, b) {
 // Diffing is the algorithm to find where the change / delta is to be made and will update only that portion / cell
 // the process of updating the area or cell from cell is called reconciliation
 // Vdom-2 <- Vdom-1 <- Rdom
-ReactDOM.render(<Router><App val={add} /></Router>, document.getElementById("root"));
 
+const appStore = createStore(counterReducer);
+
+ReactDOM.render(
+  <Provider store={appStore}>
+    <Router>
+      <App val={add} />
+    </Router>
+  </Provider>,
+  document.getElementById("root")
+);

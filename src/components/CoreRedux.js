@@ -25,3 +25,28 @@
 
 //Reducer - Redux
 // Reducer accepts PrevState and action from Store and provide a new state which will be updated in the store
+
+// Install React redux react-redux use store.connect instead of store.dispatch and store.subscribe
+// don't subscribe presntational components to stor, subscribe only container components to the store
+
+import React from "react";
+// do in index.js
+import { connect } from "react-redux";
+import ReduxForm from "./ReduxForm/ReduxForm";
+import ReduxDisplay from "./ReduxForm/ReduxDisplay";
+// const dispcontaitner = connect()(Display);
+//<Provider store={constStore}></Provider>
+
+class CoreRedux extends React.Component {
+  render() {
+    return (
+      <div>
+        <h4>This is a from for redux</h4>
+        <ReduxForm />
+        <ReduxDisplay val={0} />
+      </div>
+    );
+  }
+}
+
+export default CoreRedux;
