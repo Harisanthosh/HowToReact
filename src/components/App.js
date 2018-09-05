@@ -8,6 +8,7 @@ import Contactus from "./Contactus";
 import Home from "./Home";
 import MainPage from "./MainPage";
 import Console from "./Console";
+import DevPrompt from "./DevPrompt";
 //Rules of JS XML
 // Single root tag(element)
 // every start tag must have corresponding end tag<p></p></p>
@@ -59,6 +60,9 @@ class App extends React.Component {
           <li>
             <Link to="/console">Console</Link>
           </li>
+          <li>
+            <Link to="/prompt">Prompt</Link>
+          </li>
         </ul>
         <switch>
           <Route path="/" exact component={Home} />
@@ -66,6 +70,7 @@ class App extends React.Component {
           <Route path="/contactus" component={Contactus} />
           <Route path="/mainpage" component={MainPage} />
           <Route path="/console" component={Console} />
+          <Route path="/prompt" component={DevPrompt} />
         </switch>
       </div>
     );
