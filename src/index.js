@@ -1,6 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import App from "./components/App"
+import { BrowserRouter as Router } from "react-router-dom"
 
 // function Hello() {
 //     return <div>
@@ -39,5 +40,5 @@ function add(a, b) {
 // Diffing is the algorithm to find where the change / delta is to be made and will update only that portion / cell
 // the process of updating the area or cell from cell is called reconciliation
 // Vdom-2 <- Vdom-1 <- Rdom
-ReactDOM.render(<App val={add} />, document.getElementById("root"));
+ReactDOM.render(<Router><App val={add} /></Router>, document.getElementById("root"));
 
