@@ -33,7 +33,9 @@ import React from "react";
 // do in index.js
 import { connect } from "react-redux";
 import ReduxForm from "./ReduxForm/ReduxForm";
-import ReduxDisplay from "./ReduxForm/ReduxDisplay";
+//import ReduxDisplay from "./ReduxForm/ReduxDisplay";
+
+import ReduxDisplay from "./containers/DisplayContainer";
 // const dispcontaitner = connect()(Display);
 //<Provider store={constStore}></Provider>
 

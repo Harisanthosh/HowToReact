@@ -1,6 +1,7 @@
 import React from "react";
 // do in index.js
-import { connect } from "react-redux";
+//import { connect } from "react-redux";
+
 // const dispcontaitner = connect()(Display);
 //<Provider store={constStore}></Provider>
 
@@ -21,6 +22,6 @@ function mapStateToProps(state) {
   };
 }
 
-const DisplayContainer = connect(mapStateToProps)(ReduxDisplay);
+//const DisplayContainer = connect(mapStateToProps)(ReduxDisplay);
 
-export default DisplayContainer;
+export default ReduxDisplay;

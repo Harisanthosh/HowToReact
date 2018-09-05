@@ -18,6 +18,7 @@ class ReduxForm extends React.Component {
   decrement() {
     console.log("Decrementing!!");
     this.props.dispatch(decrementAction());
+    //use mapDispatchToProps to isolate this as a containerized component and return dispatcher from there
   }
   render() {
     return (
